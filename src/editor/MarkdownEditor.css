@@ -1,0 +1,136 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.editor-toolbar {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.toolbar-group button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.toolbar-group button:hover {
+  background: var(--bg-accent);
+  color: var(--text-primary);
+}
+
+.toolbar-group button.active {
+  background: var(--accent-color);
+  color: white;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background: var(--glass-border);
+  margin: 0 8px;
+}
+
+.editor-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.editor-textarea, .editor-preview {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.editor-textarea {
+  background: transparent;
+  color: var(--text-primary);
+  resize: none;
+  border-right: 1px solid var(--glass-border);
+}
+
+.editor-preview {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.editor-content.edit .editor-preview { display: none; }
+.editor-content.preview .editor-textarea { display: none; }
+.editor-content.preview .editor-preview { border-right: none; }
+
+/* Markdown Styles */
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.markdown-body p { margin-bottom: 16px; }
+
+.markdown-body code {
+  background: var(--bg-accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.markdown-body pre {
+  background: var(--bg-secondary);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 16px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.markdown-body th, .markdown-body td {
+  border: 1px solid var(--glass-border);
+  padding: 8px 12px;
+}
+
+.markdown-body th {
+  background: var(--bg-accent);
+}
